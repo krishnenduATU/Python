@@ -11,7 +11,7 @@ Notes :
 # Import modules 
 import os, os.path
 from time import sleep
-import file_utilities
+#import file_utilities
 from os_utilities import cpu_load
 # Functions 
 # Variables 
@@ -40,4 +40,9 @@ while True:
             file_handle.write(logline)
     except IOError as err: 
         print(f"IOError was {err}") 
-  
+    except EOFError as err: 
+        print(f"End of file error was {err}") 
+    except OSError as err:
+        print("OS Error was {err}") 
+    except: 
+        print("General Error")
